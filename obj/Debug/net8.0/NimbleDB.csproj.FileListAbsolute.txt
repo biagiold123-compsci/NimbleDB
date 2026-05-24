@@ -1,0 +1,14 @@
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\bin\Debug\net8.0\NimbleDB.exe
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\bin\Debug\net8.0\NimbleDB.deps.json
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\bin\Debug\net8.0\NimbleDB.runtimeconfig.json
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\bin\Debug\net8.0\NimbleDB.dll
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\bin\Debug\net8.0\NimbleDB.pdb
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\obj\Debug\net8.0\NimbleDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\obj\Debug\net8.0\NimbleDB.AssemblyInfoInputs.cache
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\obj\Debug\net8.0\NimbleDB.AssemblyInfo.cs
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\obj\Debug\net8.0\NimbleDB.csproj.CoreCompileInputs.cache
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\obj\Debug\net8.0\NimbleDB.dll
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\obj\Debug\net8.0\refint\NimbleDB.dll
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\obj\Debug\net8.0\NimbleDB.pdb
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\obj\Debug\net8.0\NimbleDB.genruntimeconfig.cache
+C:\Users\biagi\Documents\VSC#\NimbleDB\NimbleDB2\obj\Debug\net8.0\ref\NimbleDB.dll
