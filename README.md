@@ -1,17 +1,11 @@
-🗄️ NimbleDB
-An in-memory relational database engine built from scratch in C# 12 / .NET 8
+NimbleDB
+A fully functional, in-memory relational database engine built from scratch in C# 12 / .NET 8, demonstrating mastery of systems programming, concurrency, data structures, and software architecture patterns.
 
-A portfolio project demonstrating systems programming, concurrency, data structures, and software architecture in C#
-</div>
-
-📖 Overview
-NimbleDB is a fully functional relational database engine written from scratch — no third-party libraries. It parses and executes a custom SQL-like query language, stores data in thread-safe in-memory tables backed by Red-Black tree and hash indexes, and persists the full database state to disk as JSON. The project ships with an interactive REPL shell and a built-in concurrency stress test.
-
-✨ Features
+Features
 FeatureDetailCustom Query LanguageHand-written lexer and recursive-descent parser supporting SELECT, INSERT, UPDATE, DELETEWHERE Clause EvaluationBoolean expressions, AND/OR/NOT, LIKE pattern matching, IN, IS NULL, comparison operatorsThread-Safe StorageReaderWriterLockSlim with MVCC-lite snapshot semantics for concurrent reads and exclusive writesDual IndexingGeneric sorted index (Red-Black tree) for range scans and hash index for O(1) equality lookupsJSON PersistenceFull save/restore of schema and row data via System.Text.JsonObserver / Event BusSingleton publish-subscribe system with pluggable console logger and metrics collectorSession MetricsTracks insert, update, delete, and query counts with average query latencyInteractive REPLCommand-line shell with query history, live event toggle, and database statisticsBulk DMLBatch insert of multiple rows in a single validated, indexed writeCustom Exception HierarchyTyped exceptions for constraint violations, syntax errors, and schema mismatches
 
-🗂️ Project Structure
-NimbleDB/
+Project Structure
+NimbleDB2/
 ├── CLI/
 │   └── Repl.cs                  # Interactive REPL shell and meta-commands
 ├── Core/
@@ -33,7 +27,7 @@ NimbleDB/
 ├── Program.cs                   # Demo: schema, queries, concurrency test, REPL
 └── NimbleDB.csproj
 
-🔬 Key C# Concepts Demonstrated
+Key C# Concepts Demonstrated
 
 Generics — SortedIndex<TKey>, HashIndex<TKey> with type constraints
 Records and positional syntax — ColumnDefinition, all AST node types
@@ -42,6 +36,7 @@ Volatile reads — MVCC-lite row slot access without full locks
 Interlocked — atomic counters in the metrics collector and stress test
 ConcurrentDictionary — thread-safe table catalog
 LINQ — projection, filtering, ordering, and aggregation over live table scans
+IAsyncEnumerable-ready design — cooperative scan pattern with predicate injection
 Custom exception hierarchy — abstract base with sealed derived types
 Observer pattern — decoupled event bus with multiple subscriber types
 Facade pattern — Database class hides engine complexity behind a clean API
@@ -51,29 +46,28 @@ Recursive-descent parsing — hand-written Pratt-style expression parser
 ICloneable — deep row cloning for safe UPDATE transforms
 
 
-🚀 Getting Started
+Getting Started
 Prerequisites
 
 .NET 8 SDK
 Visual Studio Code with the C# Dev Kit extension, or Visual Studio 2022+
 
 Run
-bashcd NimbleDB
+bashcd NimbleDB2
 dotnet run
-The program runs an automated demo covering all features, then drops into the interactive REPL.
+The program will run an automated demo covering all features, then drop you into the interactive REPL.
 
-💻 Using the REPL
+Using the REPL
 Once the demo completes, you can interact with the live database:
-sqlSELECT * FROM users;
+SELECT * FROM users;
 SELECT username, score FROM users WHERE score > 7 ORDER BY score DESC LIMIT 5;
-INSERT INTO users (id, username, email, age, is_active, score, created_at)
-  VALUES (99, 'zara', 'zara@example.com', 26, true, 8.5, '2024-09-01T10:00:00Z');
+INSERT INTO users (id, username, email, age, is_active, score, created_at) VALUES (99, 'zara', 'zara@example.com', 26, true, 8.5, '2024-09-01T10:00:00Z');
 UPDATE users SET is_active = false WHERE score < 5;
 DELETE FROM users WHERE is_active = false;
 Meta Commands
 CommandDescription.tablesList all tables.statsShow row counts and column counts per table.logToggle live event logging on/off.save <path>Save the database to a JSON file.load <path>Load a database from a JSON file.historyPrint query history for this session.helpPrint command reference.quitExit the program
 
-📋 Supported SQL Syntax
+Supported SQL Syntax
 sql-- SELECT
 SELECT * FROM table;
 SELECT col1, col2 FROM table WHERE condition ORDER BY col ASC|DESC LIMIT n;
@@ -89,9 +83,9 @@ DELETE FROM table WHERE condition;
 WHERE Clause Operators
 OperatorExampleComparisonage > 25, score <= 9.5, id <> 3Equalityusername = 'alice'LIKEusername LIKE '%ali%'INcategory IN ('Electronics', 'Furniture')IS NULL / IS NOT NULLemail IS NOT NULLAND / OR / NOTis_active = true AND score > 7
 
-🔒 Thread-Safety Contract
+Thread-Safety Contract
 The table engine supports many concurrent readers and one writer at a time via ReaderWriterLockSlim. The MVCC-lite design takes a pointer snapshot of row slots before filtering, meaning reads never block on in-progress writes.
-The built-in stress test runs 8 concurrent writer threads and 4 concurrent reader threads simultaneously with zero data races.
+For the stress test built into the demo, 8 concurrent writer threads and 4 concurrent reader threads operate simultaneously with zero data races.
 
-📄 License
-This project is licensed under the MIT License.
+License
+MIT — free to use, modify, and distribute.
