@@ -87,5 +87,4 @@ Thread-Safety Contract
 The table engine supports many concurrent readers and one writer at a time via ReaderWriterLockSlim. The MVCC-lite design takes a pointer snapshot of row slots before filtering, meaning reads never block on in-progress writes.
 For the stress test built into the demo, 8 concurrent writer threads and 4 concurrent reader threads operate simultaneously with zero data races.
 
-License
-MIT — free to use, modify, and distribute.
+
